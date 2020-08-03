@@ -1,0 +1,15 @@
+#add_subdirectory(gurobi)
+add_subdirectory(Goldfarb)
+add_subdirectory(lcp)
+add_subdirectory(nlopt)
+
+if (CMAKE_SYSTEM_NAME MATCHES Linux)
+   find_library(gfortran NAMES libgfortran.so.3 PATHS /usr/lib/x86_64-linux-gnu/)
+   if(gfortran)
+	   message("**** SNOPT Note: Found gfortran compiler. SNOPT will be compiled ")
+   	   add_subdirectory(snopt)
+   else()
+       message("**** SNOPT Note: Could not find gfortran compiler. SNOPT will not be compiled")
+   endif()
+endif (CMAKE_SYSTEM_NAME MATCHES Linux)
+

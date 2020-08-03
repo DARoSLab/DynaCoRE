@@ -1,0 +1,11 @@
+swing_height: 0.12
+push_down_height: 0.00
+default_target_foot_location: [0.2, -0.02, 0.0] #right stance, left swing
+#default_target_foot_location: [-0.2, -0.02, 0.0]
+
+## Feedback Gain
+Kp: [ 100, 100, 100, 100, 100, 100,
+      100, 100, 100, 100, 100, 100 ]
+Kd: [ 8, 8, 8, 8, 8, 8, 
+      8, 8, 8, 8, 8, 8]
+

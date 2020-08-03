@@ -1,0 +1,14 @@
+planner_name: velocity_reversal_lipm
+swing_height: 0.13
+push_down_height: 0.0
+#push_down_height: 0.02
+default_target_foot_location: [0.0, -0.14, 0.0]
+
+## Feedback Gain
+# virtual (x, y, z, Rx, Ry, Rz) config x6
+Kp: [ 0, 0, 0, 0, 0, 0, 300, 300, 300, 300, 300, 300]
+Kd: [ 0, 0, 0, 0, 0, 0, 15,  15,  15,  15,  15,  15]
+
+gain_decreasing_ratio: 1.0
+gain_decreasing_period_portion: 0.0
+

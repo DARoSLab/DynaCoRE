@@ -1,0 +1,339 @@
+<robot name="humanoid">
+  <!-- ===== DUMMY 'BASE' LINK ==== -->
+  <link name="torso">
+    <inertial>
+      <mass value="6.5"/>
+      <origin xyz="0.0 0.0 0.15"/>
+      <inertia ixx="0.3006167" ixy="0" ixz="0" iyy="0.23837" iyz="0" izz="0.09690467"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/Body.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <!--!!!!!!!!!!!!!!!!!!!!!RIGHT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_R_HipRz" type="continuous">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.075 0.0"/>
+    <parent link="torso"/>
+    <child link="R_HipRz"/>
+  </joint>
+  <link name="R_HipRz">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.00 -0.04293"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/HipRz.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="R_HipRz_to_R_HipRx" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
+    <parent link="R_HipRz"/>
+    <child link="R_HipRx"/>
+  </joint>
+  <link name="R_HipRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/HipRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="R_HipRx_to_R_Thigh" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
+    <parent link="R_HipRx"/>
+    <child link="R_Thigh"/>
+  </joint>
+  <link name="R_Thigh">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0.0 0.0 -0.10"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+        <geometry>
+          <mesh filename="meshes/Thigh.dae" scale="1 1 1"/>
+     </geometry>
+      <origin rpy="-1.5707 0 0" xyz="0.0 0.0 0.0"/>
+    </visual>
+   </link>
+
+  <joint name="R_Knee" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.017875 -0.247"/>
+    <parent link="R_Thigh"/>
+    <child link="R_Shank"/>
+  </joint>
+  <link name="R_Shank">
+    <inertial>
+      <mass value="0.70"/>
+      <origin xyz="-0.03416 -0.00075 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/LowerLeg3_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_Ankle" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
+    <parent link="R_Shank"/>
+    <child link="R_Foot"/>
+  </joint>
+  <link name="R_Foot">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/foot_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!LEFT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_L_HipRz" type="continuous">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.075 0.0"/>
+    <parent link="torso"/>
+    <child link="L_HipRz"/>
+  </joint>
+  <link name="L_HipRz">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.00 -0.04293"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/HipRz.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="L_HipRz_to_L_HipRx" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
+    <parent link="L_HipRz"/>
+    <child link="L_HipRx"/>
+  </joint>
+  <link name="L_HipRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/HipRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="L_HipRx_to_L_Thigh" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
+    <parent link="L_HipRx"/>
+    <child link="L_Thigh"/>
+  </joint>
+  <link name="L_Thigh">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0.0 0.0 -0.10"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+        <geometry>
+          <mesh filename="meshes/Thigh.dae" scale="1 1 1"/>
+     </geometry>
+      <origin rpy="-1.5707 0 3.141592" xyz="0.0 0.0 0.0"/>
+    </visual>
+   </link>
+
+  <joint name="L_Knee" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.017875 -0.247"/>
+    <parent link="L_Thigh"/>
+    <child link="L_Shank"/>
+  </joint>
+  <link name="L_Shank">
+    <inertial>
+      <mass value="0.70"/>
+      <origin xyz="-0.03416 -0.00075 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/LowerLeg3_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="L_Ankle" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
+    <parent link="L_Shank"/>
+    <child link="L_Foot"/>
+  </joint>
+  <link name="L_Foot">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/foot_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!RIGHT ARM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_R_ShoulderRx" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.0215 -0.1115 0.202"/>
+    <parent link="torso"/>
+    <child link="R_ShoulderRx"/>
+  </joint>
+  <link name="R_ShoulderRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.01 0.0 0.0"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/ShoulderRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="R_ShoulderRx_to_R_UpperArm" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
+    <parent link="R_ShoulderRx"/>
+    <child link="R_UpperArm"/>
+  </joint>
+  <link name="R_UpperArm">
+    <inertial>
+      <mass value="0.37"/>
+      <origin xyz="0.0 0.0 -0.09"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/UpperArm.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_UpperArm_to_R_ForeArm" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.068 -0.195"/>
+    <parent link="R_UpperArm"/>
+    <child link="R_ForeArm"/>
+  </joint>
+  <link name="R_ForeArm">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0.0 -0.04"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/ForeArm2.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0" xyz="0.0 0.0 0"/>
+    </visual>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!LEFT ARM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_L_ShoulderRx" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.0215 0.1115 0.202"/>
+    <parent link="torso"/>
+    <child link="L_ShoulderRx"/>
+  </joint>
+  <link name="L_ShoulderRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.01 0.0 0.0"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/ShoulderRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="L_ShoulderRx_to_L_UpperArm" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
+    <parent link="L_ShoulderRx"/>
+    <child link="L_UpperArm"/>
+  </joint>
+  <link name="L_UpperArm">
+    <inertial>
+      <mass value="0.37"/>
+      <origin xyz="0.0 0.0 -0.09"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/UpperArm.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 3.141592" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="L_UpperArm_to_L_ForeArm" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.068 -0.195"/>
+    <parent link="L_UpperArm"/>
+    <child link="L_ForeArm"/>
+  </joint>
+  <link name="L_ForeArm">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0.0 -0.04"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="meshes/ForeArm2.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="-1.5707 0 0" xyz="0.0 0.0 0"/>
+    </visual>
+  </link>
+</robot>

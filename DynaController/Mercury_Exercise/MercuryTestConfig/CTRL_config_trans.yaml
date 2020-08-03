@@ -1,0 +1,12 @@
+max_rf_z: 90
+min_rf_z: 10
+
+## Feedback Gain
+# virtual (x,y,z) (Rx,Ry, Rz) 
+# right abduction, hip, knee 
+# left abduction, hip, knee 
+
+Kp: [ 0, 0, 0, 0, 0, 0, 300, 300, 300, 300, 300, 300]
+Kd: [ 0, 0, 0, 0, 0, 0, 15,  15,  15,  15,  15,  15]
+
+

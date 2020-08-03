@@ -1,0 +1,786 @@
+<robot name="p3_model">
+  <link name="hip_ground_link">
+    <inertial>
+      <origin
+        xyz="-0.21963 -0.00252 -0.04174"
+        rpy="0 0 0" />
+      <mass value="9.1437" />
+      <inertia
+        ixx="0.11497"
+        ixy="-0.0021392"
+        ixz="0.00014109"
+        iyy="0.059666"
+        iyz="0.022583"
+        izz="0.16206" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.5707" />
+      <geometry>
+        <mesh
+          filename="meshes/hip_ground_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Hip_FT_Sensor"
+    type="fixed">
+    <origin
+      xyz="-0.15247 0 -0.015"
+      rpy="0 0 0" />
+    <parent link="hip_ground_link" />
+    <child  link="hip_f/t_sensor" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="hip_f/t_sensor">
+    <inertial>
+      <origin
+        xyz="-0.00714130419826856 -0.000549097540975381 0.000203175483258886"
+        rpy="0 0 0" />
+      <mass
+        value="0.046215262898878" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.5707" />
+      <geometry>
+        <mesh filename="meshes/hip_f_t_sensor.STL" />
+      </geometry>
+   </visual>
+ </link>
+<!-- IMU Joint/Link -->
+  <joint
+    name="Sagit_P3_IMU_joint"
+    type="fixed">
+    <origin
+      xyz="-0.179 0.136 0.134"
+      rpy="1.5708 0 -1.5708" />
+    <parent link="hip_ground_link" />
+    <child link="P3_IMU" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link
+    name="P3_IMU">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.25" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.01075 -0.0193 -0.0224"
+        rpy="0 0 1.57070" />
+     <geometry>
+       <box size="0.0215 0.0386 0.0448" />
+     </geometry>
+   </visual>
+ </link>
+
+   <!-- P3 RIGHT SIDE -->
+  <joint name="Sagit_P3_Abduction_Right" type="revolute">
+    <origin
+      xyz="-0.15461 -0.1025 -0.19938"
+      rpy="-0.10442 -0.52046 -0.060105" />
+    <parent link="hip_ground_link" />
+    <child link="right_hip_abd/add_link" />
+    <axis xyz="1 0 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.611"
+      upper="0.873" />
+   </joint>
+  <link name="right_hip_abd/add_link">
+    <inertial>
+      <origin
+        xyz="0.14214 -0.14506 0.02434"
+        rpy="0 0 0" />
+      <mass value="2.37" />
+      <inertia
+        ixx="0.0114056540911523"
+        ixy="-0.00168082766225483"
+        ixz="0.00610247598439131"
+        iyy="0.0151927917692044"
+        iyz="0.00334524244885922"
+        izz="0.006361868744477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh filename="meshes/right_hip_abd_add_link.STL" />
+      </geometry>
+   </visual>
+  </link>
+  <joint    name="Sagit_P3_Flexion_Right"    type="revolute">
+    <origin
+      xyz="0.1992 -0.1475 0.00075"
+      rpy="-2.1164E-16 0.5236 6.245E-17" />
+    <parent
+      link="right_hip_abd/add_link" />
+    <child
+      link="right_hip_fe_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.963"
+      upper="0.262" />
+  </joint>
+
+ <link
+    name="right_hip_fe_link">
+    <inertial>
+      <origin
+        xyz="0.00004 0.02125 -0.10906"
+        rpy="0 0 0" />
+      <mass
+        value="2.38" />
+      <inertia
+        ixx="0.00334659558092072"
+        ixy="0.000217334132544034"
+        ixz="-4.16170985997141E-07"
+        iyy="0.00237506737299935"
+        iyz="-5.9660412382548E-07"
+        izz="0.00110550421000643" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_hip_fe_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+ <joint
+    name="Sagit_P3_Hip_Yaw_Right_Passive"
+    type="revolute">
+   <origin
+      xyz="0 0.1475 -0.142 "
+      rpy="-9.5678E-16 8.5825E-16 2.0817E-17 " />
+    <parent
+      link="right_hip_fe_link" />
+    <child
+      link="right_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.611"
+      upper="0.611" />
+  </joint>
+  <link
+    name="right_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.09439 -0.02903 -0.11972 "
+        rpy="0 0 0" />
+      <mass value="3.19" />
+      <inertia
+        ixx="0.0162000606171735"
+        ixy="0.00879667099291498"
+        ixz="-0.00473963596430454"
+        iyy="0.0136139183996148"
+        iyz="0.00400927557737052"
+        izz="0.0214349854288065" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_thigh_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Thigh_Right_FT_Sensor"
+    type="fixed">
+    <origin
+      xyz="0.081984 0 -0.18709 "
+      rpy="-1.5708 -3.1416 0.2618 " />
+    <parent
+      link="right_thigh_link" />
+    <child
+      link="right_thigh_f/t_sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_thigh_f/t_sensor">
+    <inertial>
+      <origin
+        xyz="-0.00714130327248891 -0.000549094925531513 0.000203174302725456 "
+        rpy="0 0 0" />
+      <mass
+        value="0.0462152585935042" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_thigh_f_t_sensor.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Knee_Right"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.24432 "
+      rpy="0.10437 0.00089208 0.008516 " />
+    <parent
+      link="right_thigh_link" />
+    <child
+      link="right_shin_link" />
+    <axis xyz="0.0 0.99452 -0.10418 " />
+    <!--<axis xyz="0 1 0 " />-->
+    <!--<axis xyz="0.99452 -0.10418 0.0085625" />-->
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.06876597252"
+      upper="2.026" />
+  </joint>
+  <link
+    name="right_shin_link">
+    <inertial>
+      <origin
+        xyz="0.06308 -0.00627 -0.16404 "
+        rpy="0 0 0" />
+      <mass
+        value="3.008" />
+      <inertia
+        ixx="0.00565266471326236"
+        ixy="0.000368043140130914"
+        ixz="-0.000180057149522133"
+        iyy="0.00647059198020386"
+        iyz="8.11953392731939E-05"
+        izz="0.00936046386714468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_shin_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Shin_Right_FT_Sensor"
+    type="fixed">
+    <origin
+      xyz="0.051125 0 -0.23345 "
+      rpy="-1.5708 -3.1416 0.087266 " />
+    <parent
+      link="right_shin_link" />
+    <child
+      link="right_shin_f/t_sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_shin_f/t_sensor">
+    <inertial>
+      <origin
+        xyz="-0.00714130365667479 -0.00054909438467865 0.000203173734973194"
+        rpy="0 0 0" />
+      <mass
+        value="0.0462152574279291" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_shin_f_t_sensor.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Ankle_Right"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.366"
+      rpy="-6.1407E-17 6.0715E-17 -6.9389E-18 " />
+    <parent
+      link="right_shin_link" />
+    <child
+      link="right_ankle_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.524"
+      upper="0.611" />
+  </joint>
+  <link
+    name="right_ankle_link">
+    <inertial>
+      <origin
+        xyz="0.00844 -0.00869 -0.00026 "
+        rpy="0 0 0" />
+      <mass
+        value="0.238" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_ankle_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Ankle_Roll_Right_Passive"
+    type="revolute">
+   <origin
+      xyz="0 0 0"
+      rpy="-1.7483E-18 1.249E-16 2.7756E-17 " />
+    <parent
+      link="right_ankle_link" />
+    <child
+      link="right_foot_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.61086523819"
+      upper="0.61086523819" />
+  </joint>
+  <link
+    name="right_foot_link">
+    <inertial>
+      <origin
+        xyz="0.01783 -0.00462 -0.06907 "
+        rpy="0 0 0" />
+      <mass
+        value="0.25" />
+      <inertia
+        ixx="0.000519364982683758"
+        ixy="-3.94937974568523E-06"
+        ixz="-8.31252166845822E-06"
+        iyy="0.000448807847817588"
+        iyz="-0.000155919814858676"
+        izz="7.12502428327461E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/right_foot_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+
+
+  <!-- P3 LEFT SIDE -->
+
+  <joint
+    name="Sagit_P3_Abduction_Left"
+    type="revolute">
+    <origin
+      xyz="-0.15461 0.1025 -0.19938 "
+      rpy="0.10442 -0.52046 0.060105 " />
+    <parent
+      link="hip_ground_link" />
+    <child
+      link="left_hip_abd/add_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="0"
+      velocity="0" 
+      lower="-0.873"
+      upper="0.611" />
+  </joint>
+  <link
+    name="left_hip_abd/add_link">
+    <inertial>
+      <origin
+        xyz="0.14214 0.14506 0.02434 "
+        rpy="0 0 0" />
+      <mass
+        value="2.37" />
+      <inertia
+        ixx="0.0114068446866524"
+        ixy="0.00169215045489832"
+        ixz="-0.00609776421988829"
+        iyy="0.0152202238013214"
+        iyz="0.00333339595861607"
+        izz="0.00633648666768316" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_hip_abd_add_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Flexion_Left"
+    type="revolute">
+    <!--<origin xyz="0.199200961894321 0.1475 0.000749999999997086 " rpy="-3.14159265358979 2.61799387799151 1.17961196366423E-16 " />-->
+    <origin xyz="0.2 0.1475 0.00075 " rpy="0 0 0 " />
+    <parent
+      link="left_hip_abd/add_link" />
+    <child
+      link="left_hip_fe_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0" 
+      lower="-1.963"
+      upper="0.262" />
+  </joint>
+  <link name="left_hip_fe_link">
+    <inertial>
+      <origin
+        xyz="-0.00004 0.02125 -0.10906 "
+        rpy="0 0 0" />
+      <mass
+        value="2.38" />
+      <inertia
+        ixx="0.00334659534923131"
+        ixy="-0.00021733411032375"
+        ixz="-4.17436685358473E-07"
+        iyy="0.00237506751126287"
+        iyz="5.98503333828489E-07"
+        izz="0.00110550394464832" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh filename="meshes/left_hip_f_e_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+ <joint
+    name="Sagit_P3_Hip_Yaw_Left_Passive"
+    type="revolute">
+   <origin
+      xyz="0 0.1475 -0.142"
+      rpy="3.1416 3.1416 0 " />
+    <parent
+      link="left_hip_fe_link" />
+    <child
+      link="left_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.611"
+      upper="0.611" />
+  </joint>
+  <link
+    name="left_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.09439 0.02903 -0.11972 "
+        rpy="0 0 0" />
+      <mass
+        value="3.19" />
+      <inertia
+        ixx="0.016212536412593"
+        ixy="-0.00880042705630205"
+        ixz="0.00473054710313293"
+        iyy="0.0136057751524905"
+        iyz="0.00402602232001844"
+        izz="0.0214236911621945" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <!-- <mesh
+          filename="meshes/left_thigh_link_new.STL" /> -->
+        <mesh
+          filename="meshes/left_thigh_link_new.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Thigh_Left_FT_Sensor"
+    type="fixed">
+    <!-- <origin
+      xyz="0 0.057231 0.081984"
+      rpy="3.1416 -0.2618 1.5708" /> -->
+    <origin
+      xyz="0.081984 0 -0.18709 "
+      rpy="1.5708 3.1416 -0.2618 " />
+    <parent
+      link="left_thigh_link" />
+    <child
+      link="left_thigh_f/t_sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_thigh_f/t_sensor">
+    <inertial>
+      <origin
+        xyz="-0.00714130533313195 -0.000549098781895185 0.000203177676691299 "
+        rpy="0 0 0" />
+      <mass
+        value="0.0462152726226985" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_thigh_f_t_sensor.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Knee_Left"
+    type="revolute">
+    <!-- <origin
+      xyz="0 0 0"
+      rpy="0.00089208 -0.008516 -0.10437" /> -->
+    <origin
+      xyz="0 0 -0.244324789874438"
+      rpy="-0.104374173664101 0.000892082957046399 -0.00851601606974494 " /> 
+    <parent
+      link="left_thigh_link" />
+    <child
+      link="left_shin_link" />
+    <!--<axis xyz="0.99452 0.10418 -0.0085625" />-->
+    <axis xyz="0 0.99452 0.10418" />
+    <limit
+      effort="0"
+      velocity="0" 
+      lower="-0.06876597252"
+      upper="2.026" />
+  </joint>
+  <link
+    name="left_shin_link">
+    <inertial>
+      <origin
+        xyz="0.06308 0.00627 -0.16404 "
+        rpy="0 0 0" />
+      <mass
+        value="3.008" />
+      <inertia
+        ixx="0.00504703161814173"
+        ixy="-0.000450518314816275"
+        ixz="0.000185881782874105"
+        iyy="0.0061518494956966"
+        iyz="0.000102189439066134"
+        izz="0.00853566850735276" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_shin_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Shin_Left_FT_Sensor"
+    type="fixed">
+    <origin
+      xyz="0.051125 0 -0.23345 "
+      rpy="-1.5708 -3.1416 0.087266 " />
+    <parent
+      link="left_shin_link" />
+    <child
+      link="left_shin_f/t_sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_shin_f/t_sensor">
+    <inertial>
+      <origin
+        xyz="-0.00714130365575216 -0.000549094379241555 0.000203173732842121 "
+        rpy="0 0 0" />
+      <mass
+        value="0.0462152574093924" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_shin_f_t_sensor.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <joint
+    name="Sagit_P3_Ankle_Left"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.366"
+      rpy="-8.5923E-18 2.3896E-16 -2.7756E-17 " />
+    <parent
+      link="left_shin_link" />
+    <child
+      link="left_ankle_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.524"
+      upper="0.611" /> />
+  </joint>
+  <link
+    name="left_ankle_link">
+    <inertial>
+      <origin
+        xyz="0.00844 0.00869 -0.00026 "
+        rpy="0 0 0" />
+      <mass
+        value="0.238" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_ankle_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+  <!-- type can be switched from fixed to revolute -->
+  <joint
+    name="Sagit_P3_Ankle_Roll_Left_Passive"
+    type="revolute">
+  <!-- <joint
+    name="Sagit_P3_Ankle_Roll_Left_Passive"
+    type="fixed"> -->
+    <origin
+      xyz="0 0 0"
+      rpy="2.6021E-18 6.1149E-17 6.9389E-18 " />
+    <parent
+      link="left_ankle_link" />
+    <child
+      link="left_foot_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.61086523819"
+      upper="0.61086523819" />
+  </joint>
+  <link
+    name="left_foot_link">
+    <inertial>
+      <origin
+        xyz="0.01783 0.00462 -0.06907 "
+        rpy="0 0 0" />
+      <mass
+        value="0.25" />
+      <inertia
+        ixx="0.000203368320611764"
+        ixy="1.75946030813124E-06"
+        ixz="2.64328867261215E-06"
+        iyy="0.000172404922248118"
+        iyz="-5.2526247182956E-05"
+        izz="3.1166332016296E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57070" />
+      <geometry>
+        <mesh
+          filename="meshes/left_foot_link.STL" />
+      </geometry>
+   </visual>
+ </link>
+</robot>

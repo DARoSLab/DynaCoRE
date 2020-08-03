@@ -1,0 +1,26 @@
+# 1: similar to actual (hanging)
+# 3: stand up read to walk
+initial_posture: 1
+
+# num_substep_rendering: 14
+num_substep_rendering: 20
+
+# releasing_time: 1005.4
+releasing_time: 5.8
+
+hanging_height: 1.15 # Jpos test
+# hanging_height: 0.86
+
+# imu_angular_velocity_bias: [0.002, 0.002, 0.02]
+# imu_angular_velocity_noise_variance: [0.01, 0.01, 0.02]
+imu_angular_velocity_bias: [0.0, 0.0, 0.0]
+imu_angular_velocity_noise_variance: [0.0, 0.0, 0.0]
+
+# Push Body (during 0.1 sec)
+# push_timing: [ 10., 15., 20, 25]
+# push_force: [ 10. , 18., 27, 27 ]
+# push_direction: [ 90., -90, 180, 0] # degree, z-axis, ex) 90 means push left side
+
+push_timing: []
+push_force: []
+push_direction: [] # degree, z-axis, ex) 90 means push left side

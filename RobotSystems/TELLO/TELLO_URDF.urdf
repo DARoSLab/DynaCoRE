@@ -1,0 +1,231 @@
+<robot name="TELLO" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- ===== DUMMY 'BASE' LINK ==== -->
+  <link name="BODY">
+    <inertial>
+      <mass value="9.807"/>
+      <origin xyz="0.0 0.0 0.1345"/>
+      <inertia ixx="0.188824827" ixy="0.000008407" ixz="-0.000015445" iyy="0.083219132" iyz="	0.000010634" izz="0.119998911"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/BODY.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+  <!--!!!!!!!!!!!!!!!!!!!!!RIGHT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="r_hip_yaw" type="continuous">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.090 -0.029"/>
+    <parent link="BODY"/>
+    <child link="R_HIP_C"/>
+  </joint>
+  <link name="R_HIP_C">
+    <inertial>
+      <mass value="1.20717"/>
+      <origin xyz="-0.00043 0.0 -0.05917"/>
+      <inertia ixx="0.001996651" ixy="0.000000328" ixz="0.000040451" iyy="0.002472257" iyz="0.0" izz="0.001645947"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/HIP_C.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+ </link>
+
+  <joint name="r_hip_roll" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.175"/>
+    <parent link="R_HIP_C"/>
+    <child link="R_HIP_GIMBAL"/>
+  </joint>
+  <link name="R_HIP_GIMBAL">
+    <inertial>
+      <mass value="0.26433"/>
+      <origin xyz="-0.00152 0.0 0.01677"/>
+      <inertia ixx="0.000735018" ixy="0.0" ixz="0.000001772" iyy="0.000715107" iyz="0.000000002" izz="0.000728669"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/HIP_GIMBAL.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+ </link>
+
+
+  <joint name="r_hip_pitch" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.022"/>
+    <parent link="R_HIP_GIMBAL"/>
+    <child link="R_THIGH"/>
+  </joint>
+
+  <link name="R_THIGH">
+    <inertial>
+      <mass value="2.111"/>
+      <origin xyz="-0.00525 0.00011 -0.03179"/>
+      <inertia ixx="0.012171016" ixy="-0.000013456" ixz="-0.000145044" iyy="0.011789322" iyz="0.000027517" izz="0.003575467"/>
+    </inertial>
+     <visual>
+       <geometry>
+         <mesh filename="meshes/THIGH.dae" scale="1 1 1"/>
+       </geometry>
+       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+  <joint name="r_knee" type="continuous">
+    <axis xyz="0 1 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0 0.0 -0.47"/> -->
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.2276"/>
+    <parent link="R_THIGH"/>
+    <child link="R_SHANK" />
+  </joint>
+
+  <link name="R_SHANK">
+    <inertial>
+      <mass value="0.37773"/>
+      <origin xyz="0.00396 -0.00016 -0.098.34"/>
+      <inertia ixx="0.001797413" ixy="0.000002934" ixz="0.000019506" iyy="0.001815537" iyz="0.000003553" izz="0.000143890"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/SHANK.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+  <joint name="r_ankle" type="continuous">
+    <axis xyz="0 1 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0 0.0 -0.47"/> -->
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.2276"/>
+    <parent link="R_SHANK"/>
+    <child link="R_FOOT" />
+  </joint>
+
+  <link name="R_FOOT">
+    <inertial>
+      <mass value="0.05552"/>
+      <!--<origin xyz="0.01067 0.0 -0.01226"/>-->
+      <origin xyz="0.00067 0.0 -0.01226"/>
+      <inertia ixx="0.000006734" ixy="0.0" ixz="0.000002630" iyy="0.000036387" iyz="0.0" izz="0.000032703"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/FOOT.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+
+  <!--!!!!!!!!!!!!!!!!!!!!!LEFT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="l_hip_yaw" type="continuous">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.090 -0.029"/>
+    <parent link="BODY"/>
+    <child link="L_HIP_C"/>
+  </joint>
+  <link name="L_HIP_C">
+    <inertial>
+      <mass value="1.19633"/>
+      <origin xyz="-0.00044 0.0 -0.05368"/>
+      <inertia ixx="0.001961019" ixy="0.000000328" ixz="0.000040006" iyy="0.002434744" iyz="0.0" izz="0.001642970"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/HIP_C.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+ </link>
+
+  <joint name="l_hip_roll" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.175"/>
+    <parent link="L_HIP_C"/>
+    <child link="L_HIP_GIMBAL"/>
+  </joint>
+  <link name="L_HIP_GIMBAL">
+    <inertial>
+      <mass value="0.26433"/>
+      <origin xyz="-0.00152 0.0 0.01677"/>
+      <inertia ixx="0.000735018" ixy="0.0" ixz="0.000001772" iyy="0.000715107" iyz="0.000000002" izz="0.000728669"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/HIP_GIMBAL.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+ </link>
+
+  <joint name="l_hip_pitch" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.022"/>
+    <parent link="L_HIP_GIMBAL"/>
+    <child link="L_THIGH"/>
+  </joint>
+
+  <link name="L_THIGH">
+    <inertial>
+      <mass value="2.111"/>
+      <origin xyz="-0.00525 0.00011 -0.03179"/>
+      <inertia ixx="0.012171016" ixy="-0.000013456" ixz="-0.000145044" iyy="0.011789322" iyz="0.000027517" izz="0.003575467"/>
+    </inertial>
+     <visual>
+       <geometry>
+         <mesh filename="meshes/THIGH.dae" scale="1 1 1"/>
+       </geometry>
+       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+  <joint name="l_knee" type="continuous">
+    <axis xyz="0 1 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0 0.0 -0.47"/> -->
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.2276"/>
+    <parent link="L_THIGH"/>
+    <child link="L_SHANK" />
+  </joint>
+
+  <link name="L_SHANK">
+    <inertial>
+      <mass value="0.37773"/>
+      <origin xyz="0.00396 -0.00016 -0.098.34"/>
+      <inertia ixx="0.001797413" ixy="0.000002934" ixz="0.000019506" iyy="0.001815537" iyz="0.000003553" izz="0.000143890"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/SHANK.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+  <joint name="l_ankle" type="continuous">
+    <axis xyz="0 1 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0 0.0 -0.47"/> -->
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.2276"/>
+    <parent link="L_SHANK"/>
+    <child link="L_FOOT" />
+  </joint>
+
+  <link name="L_FOOT">
+    <inertial>
+      <mass value="0.05552"/>
+      <!--<origin xyz="0.01067 0.0 -0.01226"/>-->
+      <origin xyz="0.00067 0.0 -0.01226"/>
+      <inertia ixx="0.000006734" ixy="0.0" ixz="0.000002630" iyy="0.000036387" iyz="0.0" izz="0.000032703"/>
+    </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="meshes/FOOT.dae" scale="1 1 1"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+</robot>

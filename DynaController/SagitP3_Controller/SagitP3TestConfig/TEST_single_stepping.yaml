@@ -1,0 +1,13 @@
+initial_jpos: [0., -0.4, 0., 1.2, -0.7, 0.0,
+               0., -0.4, 0., 1.2, -0.7, 0.0 ]
+
+stance_leg: right
+#stance_leg: left
+body_height: 0.83
+
+body_lifting_time: 1.0
+
+st_transition_time: 0.3
+end_transition_time: 0.3
+swing_time: 1.0
+stance_time: 0.2

@@ -1,0 +1,15 @@
+# Initialization
+#initial_jpos: [0.04, -1.02, 1.55, -0.0229, -0.93, 1.59]
+initial_jpos: [0.02, -0.92, 1.55, -0.02, -0.93, 1.59]
+com_height: 0.85
+
+# Timing Parameters (sec)
+jpos_initialization_time: 2.5
+com_lifting_time: 2.0
+com_stay_time: 0.5
+com_ctrl_time: 1000.0
+
+# Body (X, Y, Z, Rx, Ry, Rz) Swing
+amp:       [0.0, 0.0, 0.0, 0., 0.0, 0.]
+frequency: [0.0, 0.0, 0.0, 0., 0.0, 0.] # Hz
+phase:     [0.0, 0.0, 0.0, 0., 0.0, 0.] 

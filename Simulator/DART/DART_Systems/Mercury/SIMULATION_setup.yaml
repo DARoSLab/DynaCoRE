@@ -1,0 +1,5 @@
+#base_condition: fixed
+#base_condition: holding
+base_condition: floating
+
+hanging_duration: 3.5

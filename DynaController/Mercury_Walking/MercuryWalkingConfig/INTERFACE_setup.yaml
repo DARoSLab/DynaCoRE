@@ -1,0 +1,38 @@
+## Basic Test ********************************* 
+# test_name: joint_ctrl_test
+
+## Walking Test ********************************* 
+test_name: walking_config_test
+
+## Walking Test ********************************* 
+#test_name: walking_jpos_test
+
+## Body Ctrl Test ********************************* 
+# test_name: body_ctrl_test
+
+## Stance and Swing Test ********************************* 
+#test_name: config_stance_swing_test
+
+base_condition: floating
+# base_condition: fixed
+#base_condition: lying
+
+# jpos_model_update: true
+jpos_model_update: false
+
+using_jpos: true
+# using_jpos: false
+
+torque_max: [  150,  100,  100,  150,  100,  100]
+torque_min: [ -150, -100, -200, -150, -100, -200]
+
+#torque_max: [  0.0001,  0.0001,  0.0001,  0.0001,  0.0001,  0.0001]
+#torque_min: [ -0.0001, -0.0001, -0.0001, -0.0001, -0.0001, -0.0001]
+
+
+joint_max: [0.27, 1.5, 2.0, 0.27, 1.5, 2.0]
+joint_min: [-0.27, -1.5, 0, -0.27, -1.5, 0]
+
+ spring_constant: [2000006.21, 200006.21, 200006.21, 2000006.21, 200006.21, 200006.21]
+
+#spring_constant: [4006.21, 2006.21, 2006.21, 4006.21, 2006.21, 2006.21]

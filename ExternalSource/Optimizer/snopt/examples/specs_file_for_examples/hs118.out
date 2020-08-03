@@ -1,0 +1,1595 @@
+
+         ==============================
+         S Q O P T  7.6.0    (Jan 2017)
+         ==============================
+1
+ 
+
+ SPECS file
+ ----------
+
+      Begin HS118 QP problem
+         Print level                1
+         Print   frequency          1
+         Summary frequency          1
+ 
+         Solution                 Yes
+         Verify level               3
+      End HS118 QP problem
+1
+ 
+ SQMEM  EXIT 100 -- finished successfully
+ SQMEM  INFO 104 -- memory requirements estimated
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Cold start.............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                        14  9.42716250E+02      20
+      1  1  2.3E+00      1      1     16  5.2E-04  1.0E+00     13  9.28895850E+02      22
+      2  1  4.6E+00      4      4      1  5.2E-04 -1.0E+00     13  9.01262250E+02      23
+      3  1  2.3E+00      7      7     18  5.2E-04  1.0E+00     12  8.87441850E+02      26
+      4  1  4.6E+00     10     10     19  5.2E-04  1.0E+00     11  8.59808250E+02      29
+      5  1 -5.2E+00     14     14     17  1.5E-04  1.0E+00     12  8.54612250E+02      33
+      6  1  7.5E+00     16     16     23  8.0E-04  1.0E+00     10  8.09639850E+02      35
+      7  1 -7.0E+00     15     15      7  1.6E-04  1.0E+00     11  8.02640600E+02      35
+      8  1  2.4E+00     18     18     31  2.9E-04 -1.0E+00     10  8.00243650E+02      37
+      9  1 -2.3E+00     17     17     16  5.2E-04  1.0E+00      9  7.86438850E+02      36
+     10  1  2.2E+00      6      6     25  8.2E-04  1.0E+00      8  7.73208250E+02      39
+     11  1  4.4E+00      9      9     24  8.2E-04 -1.0E+00      8  7.46757850E+02      42
+     12  1  6.6E+00      3      3     26  6.7E-15  1.0E+00      7  7.46757850E+02      45
+     13  1  6.4E+00     12     12     18  3.0E-04  1.0E+00      7  7.40338300E+02      48
+     14  1 -7.6E+00     11     11     30  7.5E-04  1.0E+00      8  7.17556450E+02      53
+     15  1 -5.9E+00      8      8      6  1.4E-03  1.0E+00      7  6.94056850E+02      56
+     16  1 -2.2E+00     24     24      3  5.4E-04  1.0E+00      6  6.85250850E+02      54
+     17  1  1.7E+00      5      5     21  3.5E-04  1.0E+00      4  6.80115750E+02      57
+     18  1  1.7E+00      2      2     20  5.8E-04  1.0E+00      4  6.71563250E+02      59
+     19  1 -1.7E+00      7      7     28  9.6E-04  1.0E+00      3  6.69905250E+02      64
+     20  1  1.2E+00     18     18     22  2.7E-03               1  6.65206850E+02      50
+     21  1  9.8E-02     19     19     27  2.0E-02               0  6.64820450E+02      54
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                  21   Objective            6.6482045000E+02
+ No. of Hessian products            45   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             1   Percentage                       4.76
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas            12 4.9E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration     21    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Hot start..............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                         0  6.64820450E+02      50
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                   0   Objective            6.6482045000E+02
+ No. of Hessian products            47   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             0   Percentage                       0.00
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             9 2.0E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration      0    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+
+         ==============================
+         S Q O P T  7.6.0    (Jan 2017)
+         ==============================
+1
+ 
+
+ SPECS file
+ ----------
+
+      Begin HS118 QP problem
+         Print level                1
+         Print   frequency          1
+         Summary frequency          1
+ 
+         Solution                 Yes
+         Verify level               3
+      End HS118 QP problem
+1
+ 
+ SQMEM  EXIT 100 -- finished successfully
+ SQMEM  INFO 104 -- memory requirements estimated
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Cold start.............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                        14  9.42716250E+02      20
+      1  1  2.3E+00      1      1     16  5.2E-04  1.0E+00     13  9.28895850E+02      22
+      2  1  4.6E+00      4      4      1  5.2E-04 -1.0E+00     13  9.01262250E+02      23
+      3  1  2.3E+00      7      7     18  5.2E-04  1.0E+00     12  8.87441850E+02      26
+      4  1  4.6E+00     10     10     19  5.2E-04  1.0E+00     11  8.59808250E+02      29
+      5  1 -5.2E+00     14     14     17  1.5E-04  1.0E+00     12  8.54612250E+02      33
+      6  1  7.5E+00     16     16     23  8.0E-04  1.0E+00     10  8.09639850E+02      35
+      7  1 -7.0E+00     15     15      7  1.6E-04  1.0E+00     11  8.02640600E+02      35
+      8  1  2.4E+00     18     18     31  2.9E-04 -1.0E+00     10  8.00243650E+02      37
+      9  1 -2.3E+00     17     17     16  5.2E-04  1.0E+00      9  7.86438850E+02      36
+     10  1  2.2E+00      6      6     25  8.2E-04  1.0E+00      8  7.73208250E+02      39
+     11  1  4.4E+00      9      9     24  8.2E-04 -1.0E+00      8  7.46757850E+02      42
+     12  1  6.6E+00      3      3     26  6.7E-15  1.0E+00      7  7.46757850E+02      45
+     13  1  6.4E+00     12     12     18  3.0E-04  1.0E+00      7  7.40338300E+02      48
+     14  1 -7.6E+00     11     11     30  7.5E-04  1.0E+00      8  7.17556450E+02      53
+     15  1 -5.9E+00      8      8      6  1.4E-03  1.0E+00      7  6.94056850E+02      56
+     16  1 -2.2E+00     24     24      3  5.4E-04  1.0E+00      6  6.85250850E+02      54
+     17  1  1.7E+00      5      5     21  3.5E-04  1.0E+00      4  6.80115750E+02      57
+     18  1  1.7E+00      2      2     20  5.8E-04  1.0E+00      4  6.71563250E+02      59
+     19  1 -1.7E+00      7      7     28  9.6E-04  1.0E+00      3  6.69905250E+02      64
+     20  1  1.2E+00     18     18     22  2.7E-03               1  6.65206850E+02      50
+     21  1  9.8E-02     19     19     27  2.0E-02               0  6.64820450E+02      54
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                  21   Objective            6.6482045000E+02
+ No. of Hessian products            45   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             1   Percentage                       4.76
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas            12 4.9E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration     21    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Hot start..............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                         0  6.64820450E+02      50
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                   0   Objective            6.6482045000E+02
+ No. of Hessian products            47   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             0   Percentage                       0.00
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             9 2.0E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration      0    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+
+         ==============================
+         S Q O P T  7.6.0    (Jan 2017)
+         ==============================
+1
+ 
+
+ SPECS file
+ ----------
+
+      Begin HS118 QP problem
+         Print level                1
+         Print   frequency          1
+         Summary frequency          1
+ 
+         Solution                 Yes
+         Verify level               3
+      End HS118 QP problem
+1
+ 
+ SQMEM  EXIT 100 -- finished successfully
+ SQMEM  INFO 104 -- memory requirements estimated
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Cold start.............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                        14  9.42716250E+02      20
+      1  1  2.3E+00      1      1     16  5.2E-04  1.0E+00     13  9.28895850E+02      22
+      2  1  4.6E+00      4      4      1  5.2E-04 -1.0E+00     13  9.01262250E+02      23
+      3  1  2.3E+00      7      7     18  5.2E-04  1.0E+00     12  8.87441850E+02      26
+      4  1  4.6E+00     10     10     19  5.2E-04  1.0E+00     11  8.59808250E+02      29
+      5  1 -5.2E+00     14     14     17  1.5E-04  1.0E+00     12  8.54612250E+02      33
+      6  1  7.5E+00     16     16     23  8.0E-04  1.0E+00     10  8.09639850E+02      35
+      7  1 -7.0E+00     15     15      7  1.6E-04  1.0E+00     11  8.02640600E+02      35
+      8  1  2.4E+00     18     18     31  2.9E-04 -1.0E+00     10  8.00243650E+02      37
+      9  1 -2.3E+00     17     17     16  5.2E-04  1.0E+00      9  7.86438850E+02      36
+     10  1  2.2E+00      6      6     25  8.2E-04  1.0E+00      8  7.73208250E+02      39
+     11  1  4.4E+00      9      9     24  8.2E-04 -1.0E+00      8  7.46757850E+02      42
+     12  1  6.6E+00      3      3     26  6.7E-15  1.0E+00      7  7.46757850E+02      45
+     13  1  6.4E+00     12     12     18  3.0E-04  1.0E+00      7  7.40338300E+02      48
+     14  1 -7.6E+00     11     11     30  7.5E-04  1.0E+00      8  7.17556450E+02      53
+     15  1 -5.9E+00      8      8      6  1.4E-03  1.0E+00      7  6.94056850E+02      56
+     16  1 -2.2E+00     24     24      3  5.4E-04  1.0E+00      6  6.85250850E+02      54
+     17  1  1.7E+00      5      5     21  3.5E-04  1.0E+00      4  6.80115750E+02      57
+     18  1  1.7E+00      2      2     20  5.8E-04  1.0E+00      4  6.71563250E+02      59
+     19  1 -1.7E+00      7      7     28  9.6E-04  1.0E+00      3  6.69905250E+02      64
+     20  1  1.2E+00     18     18     22  2.7E-03               1  6.65206850E+02      50
+     21  1  9.8E-02     19     19     27  2.0E-02               0  6.64820450E+02      54
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                  21   Objective            6.6482045000E+02
+ No. of Hessian products            45   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             1   Percentage                       4.76
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas            12 4.9E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration     21    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Hot start..............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                         0  6.64820450E+02      50
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                   0   Objective            6.6482045000E+02
+ No. of Hessian products            47   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             0   Percentage                       0.00
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             9 2.0E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration      0    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+
+         ==============================
+         S Q O P T  7.6.0    (Jan 2017)
+         ==============================
+1
+ 
+
+ SPECS file
+ ----------
+
+      Begin HS118 QP problem
+         Print level                1
+         Print   frequency          1
+         Summary frequency          1
+ 
+         Solution                 Yes
+         Verify level               3
+      End HS118 QP problem
+1
+ 
+ SQMEM  EXIT 100 -- finished successfully
+ SQMEM  INFO 104 -- memory requirements estimated
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Cold start.............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                        14  9.42716250E+02      20
+      1  1  2.3E+00      1      1     16  5.2E-04  1.0E+00     13  9.28895850E+02      22
+      2  1  4.6E+00      4      4      1  5.2E-04 -1.0E+00     13  9.01262250E+02      23
+      3  1  2.3E+00      7      7     18  5.2E-04  1.0E+00     12  8.87441850E+02      26
+      4  1  4.6E+00     10     10     19  5.2E-04  1.0E+00     11  8.59808250E+02      29
+      5  1 -5.2E+00     14     14     17  1.5E-04  1.0E+00     12  8.54612250E+02      33
+      6  1  7.5E+00     16     16     23  8.0E-04  1.0E+00     10  8.09639850E+02      35
+      7  1 -7.0E+00     15     15      7  1.6E-04  1.0E+00     11  8.02640600E+02      35
+      8  1  2.4E+00     18     18     31  2.9E-04 -1.0E+00     10  8.00243650E+02      37
+      9  1 -2.3E+00     17     17     16  5.2E-04  1.0E+00      9  7.86438850E+02      36
+     10  1  2.2E+00      6      6     25  8.2E-04  1.0E+00      8  7.73208250E+02      39
+     11  1  4.4E+00      9      9     24  8.2E-04 -1.0E+00      8  7.46757850E+02      42
+     12  1  6.6E+00      3      3     26  6.7E-15  1.0E+00      7  7.46757850E+02      45
+     13  1  6.4E+00     12     12     18  3.0E-04  1.0E+00      7  7.40338300E+02      48
+     14  1 -7.6E+00     11     11     30  7.5E-04  1.0E+00      8  7.17556450E+02      53
+     15  1 -5.9E+00      8      8      6  1.4E-03  1.0E+00      7  6.94056850E+02      56
+     16  1 -2.2E+00     24     24      3  5.4E-04  1.0E+00      6  6.85250850E+02      54
+     17  1  1.7E+00      5      5     21  3.5E-04  1.0E+00      4  6.80115750E+02      57
+     18  1  1.7E+00      2      2     20  5.8E-04  1.0E+00      4  6.71563250E+02      59
+     19  1 -1.7E+00      7      7     28  9.6E-04  1.0E+00      3  6.69905250E+02      64
+     20  1  1.2E+00     18     18     22  2.7E-03               1  6.65206850E+02      50
+     21  1  9.8E-02     19     19     27  2.0E-02               0  6.64820450E+02      54
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                  21   Objective            6.6482045000E+02
+ No. of Hessian products            45   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             1   Percentage                       4.76
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas            12 4.9E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration     21    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Hot start..............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                         0  6.64820450E+02      50
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                   0   Objective            6.6482045000E+02
+ No. of Hessian products            47   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             0   Percentage                       0.00
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             9 2.0E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration      0    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+
+         ==============================
+         S Q O P T  7.6.0    (Jan 2017)
+         ==============================
+1
+ 
+
+ SPECS file
+ ----------
+
+      Begin HS118 QP problem
+         Print level                1
+         Print   frequency          1
+         Summary frequency          1
+ 
+         Solution                 Yes
+         Verify level               3
+      End HS118 QP problem
+1
+ 
+ SQMEM  EXIT 100 -- finished successfully
+ SQMEM  INFO 104 -- memory requirements estimated
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Cold start.............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                        14  9.42716250E+02      20
+      1  1  2.3E+00      1      1     16  5.2E-04  1.0E+00     13  9.28895850E+02      22
+      2  1  4.6E+00      4      4      1  5.2E-04 -1.0E+00     13  9.01262250E+02      23
+      3  1  2.3E+00      7      7     18  5.2E-04  1.0E+00     12  8.87441850E+02      26
+      4  1  4.6E+00     10     10     19  5.2E-04  1.0E+00     11  8.59808250E+02      29
+      5  1 -5.2E+00     14     14     17  1.5E-04  1.0E+00     12  8.54612250E+02      33
+      6  1  7.5E+00     16     16     23  8.0E-04  1.0E+00     10  8.09639850E+02      35
+      7  1 -7.0E+00     15     15      7  1.6E-04  1.0E+00     11  8.02640600E+02      35
+      8  1  2.4E+00     18     18     31  2.9E-04 -1.0E+00     10  8.00243650E+02      37
+      9  1 -2.3E+00     17     17     16  5.2E-04  1.0E+00      9  7.86438850E+02      36
+     10  1  2.2E+00      6      6     25  8.2E-04  1.0E+00      8  7.73208250E+02      39
+     11  1  4.4E+00      9      9     24  8.2E-04 -1.0E+00      8  7.46757850E+02      42
+     12  1  6.6E+00      3      3     26  6.7E-15  1.0E+00      7  7.46757850E+02      45
+     13  1  6.4E+00     12     12     18  3.0E-04  1.0E+00      7  7.40338300E+02      48
+     14  1 -7.6E+00     11     11     30  7.5E-04  1.0E+00      8  7.17556450E+02      53
+     15  1 -5.9E+00      8      8      6  1.4E-03  1.0E+00      7  6.94056850E+02      56
+     16  1 -2.2E+00     24     24      3  5.4E-04  1.0E+00      6  6.85250850E+02      54
+     17  1  1.7E+00      5      5     21  3.5E-04  1.0E+00      4  6.80115750E+02      57
+     18  1  1.7E+00      2      2     20  5.8E-04  1.0E+00      4  6.71563250E+02      59
+     19  1 -1.7E+00      7      7     28  9.6E-04  1.0E+00      3  6.69905250E+02      64
+     20  1  1.2E+00     18     18     22  2.7E-03               1  6.65206850E+02      50
+     21  1  9.8E-02     19     19     27  2.0E-02               0  6.64820450E+02      54
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                  21   Objective            6.6482045000E+02
+ No. of Hessian products            45   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             1   Percentage                       4.76
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas            12 4.9E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration     21    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds
+1
+ 
+ Parameters
+ ==========
+
+ Files
+ -----
+ Solution file..........         0       Old basis file ........         0       Standard input.........         5
+ Insert file............         0       New basis file ........         0       (Printer)..............        10
+ Punch file.............         0       Backup basis file......         0       (Specs file)...........         4
+ Load file..............         0       Dump file..............         0       Standard output........         6
+
+ Frequencies
+ -----------
+ Print frequency........         1       Check frequency........        60       Save new basis map.....       100
+ Summary frequency......         1       Factorization frequency        50       Expand frequency.......     10000
+
+ LP/QP Parameters
+ ----------------
+ Minimize...............                 QPsolver Cholesky......                 Hot start..............
+ Scale tolerance........     0.900       Feasibility tolerance..  1.00E-06       Iteration limit........     10000
+ Scale option...........         0       Optimality tolerance...  1.00E-06       Print level............         1
+ Crash tolerance........     0.100       Pivot tolerance........  3.25E-11       Elastic mode...........         1
+ Crash option...........         3       Elastic weight.........  1.00E+00       Elastic objective......         2
+                                                                                 Time limit (secs)...... 9999999.0
+
+ Partial pricing
+ ---------------
+ LP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+ QP Partial price.......         1       Prtl price section ( A)        15       Prtl price section (-I)        18
+
+ QP objective
+ ------------
+ Objective variables....        15       Hessian columns........        15       Superbasics limit......        15
+ Nonlin Objective vars..        15       Unbounded step size....  1.00E+20
+ Linear Objective vars..         0
+
+ Miscellaneous
+ -------------
+ LU factor tolerance....      3.99       LU singularity tol.....  3.25E-11       Timing level...........         3
+ LU update tolerance....      3.99       LU swap tolerance......  1.22E-04       Debug level............         0
+ LU partial  pivoting...                 eps (machine precision)  2.22E-16       System information.....        No
+                                                                                 Sticky parameters......        No
+
+ 
+
+ Matrix statistics
+ -----------------
+               Total      Normal        Free       Fixed     Bounded
+ Rows             18           5           1           0          12
+ Columns          15           0           0           0          15
+
+ No. of matrix elements                   54     Density      20.000
+ Biggest                          1.0000E+00  (excluding fixed columns,
+ Smallest                         1.0000E+00   free rows, and RHS)
+
+ No. of objective coefficients            15
+ Biggest                          2.3000E+00  (excluding fixed columns)
+ Smallest                         1.7000E+00
+
+ Nonlinear constraints       0     Linear constraints      18
+ Nonlinear variables        15     Linear variables         0
+ Jacobian  variables         0     Objective variables     15
+ Total constraints          18     Total variables         15
+1
+ 
+
+ Itn      0: Feasible linear constraints
+
+    Itn pp  QP mult   +SBS   -SBS    -BS     Step    Pivot NonOpt    QP objective     L+U ncp  rgNorm    nS condZHZ
+      0                                                         0  6.64820450E+02      50
+1
+ 
+ SQOPT  EXIT   0 -- finished successfully
+ SQOPT  INFO   1 -- optimality conditions satisfied
+
+ Problem name                    hs118
+ No. of iterations                   0   Objective            6.6482045000E+02
+ No. of Hessian products            47   Linear    objective  6.6270000000E+02
+                                         Quadratic objective  2.1204500000E+00
+ No. of degenerate steps             0   Percentage                       0.00
+ Max x                      14 7.7E+01   Max pi                     17 2.3E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             9 2.0E-16
+1
+ 
+ Name              hs118                 Objective Value      6.6482045000E+02
+
+ Status         Optimal Soln             Iteration      0    Superbasics     0
+
+ Section 1 - Constraints
+
+  Number  ...Row.. State  ...Value......  Slack Value...  ..Lower Limit.  ..Upper Limit.  .Dual Variable    ..i
+ 
+      16  r      1    LL        -7.00000          .             -7.00000         6.00000         2.30020      1
+      17  r      2    BS         0.00000        -6.00000        -7.00000         6.00000          .           2
+      18  r      3    BS         2.00000        -4.00000        -7.00000         6.00000          .           3
+      19  r      4    BS         2.00000        -4.00000        -7.00000         6.00000          .           4
+      20  r      5    UL         7.00000          .             -7.00000         7.00000        -0.04860      5
+      21  r      6    UL         7.00000          .             -7.00000         7.00000        -1.75980      6
+      22  r      7    UL         7.00000          .             -7.00000         7.00000        -1.17220      7
+      23  r      8    UL         7.00000          .             -7.00000         7.00000        -0.58560      8
+      24  r      9    BS        -3.00000         4.00000        -7.00000         6.00000          .           9
+      25  r     10    UL         6.00000          .             -7.00000         6.00000        -0.29100     10
+      26  r     11    UL         6.00000          .             -7.00000         6.00000        -0.19260     11
+      27  r     12    UL         6.00000          .             -7.00000         6.00000        -0.09560     12
+      28  r     13    LL        60.00000          .             60.00000           None          1.66120     13
+      29  r     14    BS        57.00000         7.00000        50.00000           None           .          14
+      30  r     15    LL        70.00000          .             70.00000           None          2.30020     15
+      31  r     16    LL        85.00000          .             85.00000           None          2.30060     16
+      32  r     17    LL       100.00000          .            100.00000           None          2.30100     17
+      33  r     18    BS       662.70000       662.70000           None            None         -1.0         18
+1
+ 
+ Section 2 - Variables
+
+  Number  .Column. State  ...Value......  .Obj Gradient.  ..Lower Limit.  ..Upper Limit.  .Dual Variable    m+j
+ 
+       1  x      1    LL         8.00000         2.30160         8.00000        21.00000         2.94060     19
+       2  x      2    BS        49.00000         1.70980        43.00000        57.00000        -0.00000     20
+       3  x      3    LL         3.00000         2.20090         3.00000        16.00000         0.53970     21
+       4  x      4    BS         1.0             2.30020          .             90.00000         0.00000     22
+       5  x      5    BS        56.00000         1.71120          .            120.00000        -0.00000     23
+       6  x      6    LL          .              2.20000          .             60.00000         1.90900     24
+       7  x      7    BS         1.0             2.30020          .             90.00000         0.00000     25
+       8  x      8    BS        63.00000         1.71260          .            120.00000         0.00000     26
+       9  x      9    BS         6.00000         2.20180          .             60.00000         0.00000     27
+      10  x     10    BS         3.00000         2.30060          .             90.00000         0.00000     28
+      11  x     11    BS        70.00000         1.71400          .            120.00000        -0.00000     29
+      12  x     12    BS        12.00000         2.20360          .             60.00000        -0.00000     30
+      13  x     13    BS         5.00000         2.30100          .             90.00000         0.00000     31
+      14  x     14    BS        77.00000         1.71540          .            120.00000        -0.00000     32
+      15  x     15    BS        18.00000         2.20540          .             60.00000         0.00000     33
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.00 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.00 seconds
+ Time for objective function                    0.00 seconds

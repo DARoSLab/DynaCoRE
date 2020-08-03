@@ -1,0 +1,30 @@
+planner_name: velocity_reversal_lipm
+swing_height: 0.17
+push_down_height: 0.0
+#push_down_height: 0.02
+default_target_foot_location: [0.0, -0.1, 0.0]
+
+## Feedback Gain
+# CoMx, CoMy, CoMz, Rx, Ry, Rz, Foot_x, Foot_y, Foot_z
+#Kp: [0.0, 0.0, 100., 100., 100., 0., 200, 150, 150]
+#Kd: [0.0, 0.0, 3., 3., 3., 0., 3, 3, 3]
+
+# OP foot ctrl gains
+# Kp: [0.0, 0.0, 100., 90., 90., 0., 250, 250, 350]
+# Kd: [0.0, 0.0,   0.,  0.,  0,  0.,  10,  10,  20]
+
+Kp: [0.0, 0.0, 90., 80., 130., 0., 250, 300, 350]
+Kd: [0.0, 0.0,   5,  5,  5,  0.,  12.,  17., 17.]
+
+# Kp: [0.0, 0.0, 50., 50., 50., 0., 150, 150, 150]
+# Kd: [0.0, 0.0,   0.,  0.,  0.,  0.,  5,  5, 5]
+
+gain_decreasing_ratio: 1.0
+gain_decreasing_period_portion: 0.0
+
+#gain_decreasing_ratio: 0.95
+#gain_decreasing_period_portion: 0.01
+
+# Torque limt (Nm)
+torque_max: [30, 30, 50, 50, 50, 50]
+torque_min: [-30, -30, -50, -50, -50, -130]

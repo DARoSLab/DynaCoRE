@@ -1,0 +1,29 @@
+## Basic Test ********************************* 
+#test_name: foot_ctrl_test
+#test_name: joint_ctrl_test
+
+## Walking Test ********************************* 
+#test_name: walking_test
+#test_name: walking_body_test # may 10 test
+test_name: walking_config_test
+
+## Body Ctrl Test ********************************* 
+#test_name: body_ctrl_test
+#test_name: com_ctrl_test
+#test_name: body_jpos_ctrl_test
+
+## Stance and Swing Test ********************************* 
+#test_name: body_stance_swing_test
+#test_name: com_stance_swing_test
+#test_name: config_stance_swing_test
+
+
+base_condition: floating
+#base_condition: fixed
+#base_condition: lying
+
+torque_max: [  150,  100,  100,  150,  100,  100]
+torque_min: [ -150, -100, -200, -150, -100, -200]
+
+joint_max: [1.5, 1.5, 1.60, 1.5, 1.5, 1.60]
+joint_min: [-1.5, -1.5, 0, -1.5, -1.5, 0]

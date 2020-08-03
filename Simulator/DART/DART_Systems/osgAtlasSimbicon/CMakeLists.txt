@@ -1,0 +1,5 @@
+set(example_name osgAtlasSimbicon)
+file(GLOB srcs "*.cpp" "*.hpp")
+add_executable(${example_name} ${srcs})
+target_link_libraries(${example_name} ${DART_LIBRARIES})
+#target_link_libraries(${example_name} osgShadow)

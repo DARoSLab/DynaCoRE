@@ -1,0 +1,356 @@
+<?xml version="1.0" ?>
+<robot name="quadruped" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- ===== DUMMY 'BASE' LINK ==== -->
+  <link name="body">
+    <inertial>
+      <!-- <mass value="8.9"/> -->
+      <mass value="9.5"/>
+      <!-- <origin xyz="0.00347 0.0 0.22524"/> -->
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.3006167" ixy="0" ixz="0" iyy="0.23837" iyz="0" izz="0.09690467"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <box size="0.35 0.2 0.1" />
+      </geometry>
+     <origin rpy = "0 0 0" xyz = "0.0 0 0"/>
+  </visual>
+  </link>
+  <!-- IMU -->
+  <joint name="fixed_imu" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="-0.02 -0.07 0.05"/>
+    <parent link="body"/>
+    <child link="imu" />
+  </joint>
+  <link name="imu">
+    <inertial>
+      <mass value="0.0000000000001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0000000001" ixy="0" ixz="0.0" iyy="0.000000001" iyz="0" izz="0.00000000001"/>
+    </inertial>
+  </link>
+
+
+  <!--!!!!!!!!!!!! Front Right Leg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_abduct_fr_j" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.175 -0.1 0.0"/>
+    <parent link="body"/>
+    <child link="abduct_fr"/>
+  </joint>
+  <link name="abduct_fr">
+    <inertial>
+      <mass value="2.1656"/>
+      <origin xyz="0.0 0. 0."/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+  </inertial>
+  <visual>
+      <geometry>
+          <sphere radius="0.05" />
+      </geometry>
+     <origin rpy = "0 0 0" xyz = "0.0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="abduct_fr_to_thigh_fr_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.02 -0.02"/>
+    <parent link="abduct_fr"/>
+    <child link="thigh_fr"/>
+  </joint>
+  <link name="thigh_fr">
+    <inertial>
+      <mass value="3.2"/>
+      <origin xyz="0.0 0.00 -0.075"/>
+      <inertia ixx="0.038482" ixy="0" ixz="0.0" iyy="0.039835" iyz="-0.003" izz="0.0042934"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="thigh_fr_to_knee_fr_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.15"/>
+    <parent link="thigh_fr"/>
+    <child link="shank_fr"/>
+  </joint>
+  <link name="shank_fr">
+    <inertial>
+      <mass value="0.649"/>
+      <origin xyz="0.0 0.0 -0.075"/>
+      <inertia ixx="0.00338" ixy="0" ixz="0.0" iyy="0.00338" iyz="0" izz="0.000011"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="ankle_fr" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.135"/>
+    <parent link="shank_fr"/>
+    <child link="foot_fr" />
+  </joint>
+  <link name="foot_fr">
+    <inertial>
+      <mass value="0.123"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0.0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+
+<!--!!!!!!!!!!!! Front Left Leg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_abduct_fl_j" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.175 0.1 0.0"/>
+    <parent link="body"/>
+    <child link="abduct_fl"/>
+  </joint>
+  <link name="abduct_fl">
+    <inertial>
+      <mass value="2.1656"/>
+      <origin xyz="0.0 0. 0."/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+  </inertial>
+  <visual>
+      <geometry>
+          <sphere radius="0.05" />
+      </geometry>
+     <origin rpy = "0 0 0" xyz = "0.0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="abduct_fl_to_thigh_fl_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.02 -0.02"/>
+    <parent link="abduct_fl"/>
+    <child link="thigh_fl"/>
+  </joint>
+  <link name="thigh_fl">
+    <inertial>
+      <mass value="3.2"/>
+      <origin xyz="0.0 0.00 -0.075"/>
+      <inertia ixx="0.038482" ixy="0" ixz="0.0" iyy="0.039835" iyz="-0.003" izz="0.0042934"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="thigh_fl_to_knee_fl_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.15"/>
+    <parent link="thigh_fl"/>
+    <child link="shank_fl"/>
+  </joint>
+  <link name="shank_fl">
+    <inertial>
+      <mass value="0.649"/>
+      <origin xyz="0.0 0.0 -0.075"/>
+      <inertia ixx="0.00338" ixy="0" ixz="0.0" iyy="0.00338" iyz="0" izz="0.000011"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="ankle_fl" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.135"/>
+    <parent link="shank_fl"/>
+    <child link="foot_fl" />
+  </joint>
+  <link name="foot_fl">
+    <inertial>
+      <mass value="0.123"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0.0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+<!--!!!!!!!!!!!! Hind Right Leg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_abduct_hr_j" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.175 -0.1 0.0"/>
+    <parent link="body"/>
+    <child link="abduct_hr"/>
+  </joint>
+  <link name="abduct_hr">
+    <inertial>
+      <mass value="2.1656"/>
+      <origin xyz="0.0 0. 0."/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+  </inertial>
+  <visual>
+      <geometry>
+          <sphere radius="0.05" />
+      </geometry>
+     <origin rpy = "0 0 0" xyz = "0.0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="abduct_hr_to_thigh_hr_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.02 -0.02"/>
+    <parent link="abduct_hr"/>
+    <child link="thigh_hr"/>
+  </joint>
+  <link name="thigh_hr">
+    <inertial>
+      <mass value="3.2"/>
+      <origin xyz="0.0 0.00 -0.075"/>
+      <inertia ixx="0.038482" ixy="0" ixz="0.0" iyy="0.039835" iyz="-0.003" izz="0.0042934"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="thigh_hr_to_knee_hr_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.15"/>
+    <parent link="thigh_hr"/>
+    <child link="shank_hr"/>
+  </joint>
+  <link name="shank_hr">
+    <inertial>
+      <mass value="0.649"/>
+      <origin xyz="0.0 0.0 -0.075"/>
+      <inertia ixx="0.00338" ixy="0" ixz="0.0" iyy="0.00338" iyz="0" izz="0.000011"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="ankle_hr" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.135"/>
+    <parent link="shank_hr"/>
+    <child link="foot_hr" />
+  </joint>
+  <link name="foot_hr">
+    <inertial>
+      <mass value="0.123"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0.0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+<!--!!!!!!!!!!!! Hind Left Leg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_abduct_hl_j" type="continuous">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.175 0.1 0.0"/>
+    <parent link="body"/>
+    <child link="abduct_hl"/>
+  </joint>
+  <link name="abduct_hl">
+    <inertial>
+      <mass value="2.1656"/>
+      <origin xyz="0.0 0. 0."/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+  </inertial>
+  <visual>
+      <geometry>
+          <sphere radius="0.05" />
+      </geometry>
+     <origin rpy = "0 0 0" xyz = "0.0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="abduct_hl_to_thigh_hl_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.02 -0.02"/>
+    <parent link="abduct_hl"/>
+    <child link="thigh_hl"/>
+  </joint>
+  <link name="thigh_hl">
+    <inertial>
+      <mass value="3.2"/>
+      <origin xyz="0.0 0.00 -0.075"/>
+      <inertia ixx="0.038482" ixy="0" ixz="0.0" iyy="0.039835" iyz="-0.003" izz="0.0042934"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="thigh_hl_to_knee_hl_j" type="continuous">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0 0.0" xyz="0.0 0.0 -0.15"/>
+    <parent link="thigh_hl"/>
+    <child link="shank_hl"/>
+  </joint>
+  <link name="shank_hl">
+    <inertial>
+      <mass value="0.649"/>
+      <origin xyz="0.0 0.0 -0.075"/>
+      <inertia ixx="0.00338" ixy="0" ixz="0.0" iyy="0.00338" iyz="0" izz="0.000011"/>
+    </inertial>
+  <visual>
+      <geometry>
+          <capsule radius="0.05" length="0.12" />
+      </geometry>
+      <origin rpy = "0 0 0" xyz = "0 0 0"/>
+  </visual>
+  </link>
+
+  <joint name="ankle_hl" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.135"/>
+    <parent link="shank_hl"/>
+    <child link="foot_hl" />
+  </joint>
+  <link name="foot_hl">
+    <inertial>
+      <mass value="0.123"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0.0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+</robot>

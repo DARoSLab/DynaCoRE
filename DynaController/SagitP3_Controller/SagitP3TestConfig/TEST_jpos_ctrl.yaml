@@ -1,0 +1,18 @@
+# Initialization
+#initial_jpos: [0.07, -0.93, 1.55, -0.0529, -0.93, 1.59]
+# initial_jpos: [0.0, -0.50, 1.0, 0.0, -0.50, 1.0]
+initial_jpos: [0., -0.4, 0., 1.2, -0.7, 0.0,
+               0., -0.4, 0., 1.2, -0.7, 0.0 ]
+initialization_time: 2.0
+
+# Timing Parameters (sec)
+test_duration: 100.32
+
+amplitude: [ 0.5, 0.5, 0.5, 0.5, 0.5, 0, # Left Leg
+             0.5, 0.5, -0.5,  0,   0, 0 ]
+
+frequency: [ 0, 1., 0, 0, 0, 0, # Left Leg
+             0, 0, 0, 0, 0, 0 ]
+
+phase: [ 0, 0, 0, 0, 0, 0, # Left Leg
+         0, 0, 0, 0, 0, 0 ]

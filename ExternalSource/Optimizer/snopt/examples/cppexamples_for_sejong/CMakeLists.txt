@@ -1,0 +1,11 @@
+add_executable(dynacore_snopt_cpp_catmixa catmixa.cpp)
+add_executable(dynacore_snopt_cpp_hs118 hs118.cpp)
+add_executable(dynacore_snopt_cpp_sntoya sntoya.cpp)
+add_executable(dynacore_snopt_cpp_sntoyb sntoyb.cpp)
+add_executable(dynacore_snopt_cpp_sntoyc sntoyc.cpp)
+
+target_link_libraries(dynacore_snopt_cpp_catmixa dynacore_snopt)
+target_link_libraries(dynacore_snopt_cpp_hs118 dynacore_snopt)
+target_link_libraries(dynacore_snopt_cpp_sntoya dynacore_snopt)
+target_link_libraries(dynacore_snopt_cpp_sntoyb dynacore_snopt)
+target_link_libraries(dynacore_snopt_cpp_sntoyc dynacore_snopt)
